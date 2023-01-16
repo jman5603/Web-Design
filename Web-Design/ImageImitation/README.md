@@ -1,0 +1,1 @@
+Students were given images that had changes made to them using CSS elements as well as the original images. The assignment was for students to figure out what changes were made to the images and recreate them.
