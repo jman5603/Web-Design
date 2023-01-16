@@ -1,0 +1,31 @@
+.tictactoe {
+  border:solid 20px #000000;
+  border-image:url(/tic-tac-toe.png) 55 round;
+}
+
+.theater {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.butterfly {
+  border-radius: 0 100 0 100 / 0 100 0 100;
+}
+
+div.grad1 {
+  background:linear-gradient(to right, purple, yellow);
+}
+
+.blur {
+  width:400px; 
+  height:350px; 
+  background-image:url(/imitation-images/theater_stage.jpg);
+}
