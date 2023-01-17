@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Counting Coins Assignment</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <script>
+    let quarter = 25, dime = 10, nickel = 5, penny = 1;
+    </script>
+  </head>
+  <body>
+    <h1>Counting Coins</h1>
+    <h3>Answers are in cents. Four different ways to get 115 cents.</h3>
+    <p>Four dimes, two quarters, and 5 nickels.</p>
+    <p id="answer1"></p>
+  <script>
+    document.getElementById("answer1").innerHTML = quarter+quarter+dime+dime+dime+dime+nickel+nickel+nickel+nickel+nickel;
+  </script>
+      <p>One hundred and fifteen pennies.</p>
+    <p id="answer2"></p>
+  <script>
+    document.getElementById("answer2").innerHTML = penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny+penny;
+  </script>
+      <p>Ten dimes and three nickels.</p>
+    <p id="answer3"></p>
+  <script>
+    document.getElementById("answer3").innerHTML = dime+dime+dime+dime+dime+dime+dime+dime+dime+dime+nickel+nickel+nickel;
+  </script>
+      <p>Twenty three nickels.</p>
+    <p id="answer4"></p>
+  <script>
+    document.getElementById("answer4").innerHTML = nickel+nickel+nickel+nickel+nickel+nickel+nickel+nickel+nickel+nickel+nickel+nickel+nickel+nickel+nickel+nickel+nickel+nickel+nickel+nickel+nickel+nickel+nickel;
+  </script>
+  </body>
+</html>
