@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Countdown Surprise Assignment</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+  <style>
+  a {
+   color:black; 
+  }
+ 
+  canvas {
+   position:absolute; 
+
+  }
+  body {
+    text-align:center;
+}
+  .div {
+   height:100px;
+   width:100px;
+   position: fixed;
+  }
+  #d1 {
+    left:0;
+    top:0;
+    background:blue;
+  }
+  #d2 {
+    bottom:0;
+    right:0;
+    background:red;
+  }
+  img {position:fixed;}
+  #img1 {
+    right: 0;
+    top: 10%;
+  }
+  #img2 {
+    left: 0;
+    bottom: 10%;
+  }
+  </style>
+  </head>
+  <body onload="thing()">
+    <h1>Countdown Surprise Assignment</h1>
+    <font size="10">
+    <span id="Countdown">10</span>
+    </font>
+    
+    <canvas id="mycanvas">
+    
+    </canvas>
+   
+    <script type="text/javascript">    
+    var timeleft = 10;
+    var img = document.getElementsByTagName("img");
+    var div = document.getElementsByClassName("div");
+    var timeright = setInterval(function(){
+      timeleft--;
+      document.getElementById("Countdown").textContent = timeleft;
+      if(timeleft <= 0) {
+        animate();
+        anymate();
+        for(i = 0; i < img.length; i++) {
+          img[i].style.display = "inline-block";
+        }
+        for(i = 0; i < div.length; i++) {
+         div[i].style.display = "block";
+        }
+        clearInterval(timeright);
+        document.getElementById("Countdown").textContent = "I'm not planning on doing a final project. I've got an A, there's no point!";
+      }
+    },1000);
+    
+    function thing() {
+      for(i = 0; i < img.length; i++) {
+        img[i].style.display = "none";
+      }
+      for(i = 0; i < div.length; i++) {
+       div[i].style.display = "none";
+      }
+    }
+    
+    var move = 0, x = 0;
+    function animate() {
+      var animation = document.getElementById("d1"),
+      otro = document.getElementById("d2"),
+      maxHeight = window.innerHeight - 100;
+      if (move <= 0) {
+        x = 1;
+      } else if (move >= maxHeight) {
+          x = -1;
+        }
+      move += 15 * x;
+      animation.style.top = move + "px";
+      otro.style.bottom = move + "px";
+      window.requestAnimationFrame(animate);
+    }
+     
+     var mave = 0;
+     function anymate() {
+      var anymation = document.getElementById("img2");
+      otro = document.getElementById("img1");
+      maxWidth = window.innerWidth - 100;
+      if (mave < maxWidth) {
+        mave += 15;
+        anymation.style.left = mave + "px";
+        otro.style.right = mave + "px";
+        window.requestAnimationFrame(anymate);
+      } else {
+          for(i = 0; i < img.length; i++) {
+            img[i].style.display = "none";
+          }
+        }
+     }
+
+    </script>
+    
+    <div class="div" id="d1"></div>
+    <div class="div" id="d2"></div>
+    
+    <img id="img1" src="/javascript/images/reda.png"><br>
+    <img id="img2" src="/javascript/images/bluea.jpg">
+  </body>
+</html>
