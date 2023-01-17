@@ -1,0 +1,35 @@
+.overimage1 {
+  color:white;
+  position:relative;
+  bottom:770px;
+  font-size:75px;
+  padding:10px;
+}
+
+body {
+  background-color:navy;
+  font-family: "Verdana"
+}
+
+.homepagelink {
+  color:yellow;
+}
+
+#link a { 
+  padding:15px; font-weight:bold; float:left; 
+}
+#link a:link { 
+  color:yellow; background-color:blue; 
+}
+
+#link a:visited { 
+  color:yellow; background-color:blue; 
+}
+
+#link a:hover { 
+  color:yellow; background-color:blue; 
+}
+
+#link a:active { 
+  color:yellow; background-color:blue; 
+}
