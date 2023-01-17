@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>A Few Of My Favorite Things</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+  <h1>A Few Of My Favorite Things</h1>
+  <button onclick="Dawson();">Dawson</button>
+  <button onclick="Nathaniel();">Nathaniel</button>
+  <button onclick="Ayden();">Ayden</button>
+  <button onclick="Hunter();">Hunter</button>
+  <button onclick="Daniel();">Daniel</button>
+  <p id="person"></p>
+    <script>
+      function Person(first, food, color, animal, music, schoolsubject) {
+      this.firstName = first;
+      this.favFood = food;
+      this.favColor = color;
+      this.favAnimal = animal;
+      this.favMusic = music;
+      this.favSchoolSubject = schoolsubject;
+      this.favorite = function() {
+        return this.firstName + "'s favorite food is " + this.favFood +
+        ".  " + this.firstName + "'s favorite color is " + this.favColor +
+        ".  " + this.firstName + "'s favorite animals are " + this.favAnimal +
+        ".  " + this.firstName + "'s favorite music is " + this.favMusic +
+        ".  " + this.firstName + "'s favorite school subject is " + this.favSchoolSubject
+        };
+      }
+    function Dawson() {
+    var Dawson = new Person("Dawson", "Popcorn", "Red", "Dogs", "Hip Hop", "Band");
+    document.getElementById("person").innerHTML = Dawson.favorite();
+    }
+    function Nathaniel() {
+    var Nathaniel= new Person("Nathaniel", "Lobster", "Green", "Llamas", "Rap", "Digital Media");
+    document.getElementById("person").innerHTML = Nathaniel.favorite();
+    }
+    function Ayden() {
+    var Ayden = new Person("Ayden", "Chicken Nuggets", "Brown", "Dogs", "Hip Hop", "Power Training");
+    document.getElementById("person").innerHTML = Ayden.favorite();
+    }
+    function Hunter() {
+    var Hunter = new Person("Hunter", "Anything Unhealthy", "Orange", "Cows", "Hip Hop", "English");
+    document.getElementById("person").innerHTML = Hunter.favorite();
+    }
+    function Daniel() {
+    var Daniel = new Person("Daniel", "Pizza", "Blue", "Cats", "Hip Hop", "Economics");
+    document.getElementById("person").innerHTML = Daniel.favorite();
+    }
+    </script>
+  </body>
+</html>
