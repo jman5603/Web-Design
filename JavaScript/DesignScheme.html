@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Design Scheme Assignment</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <script>
+function bgChange(bg) {
+    document.body.style.background = bg;
+}
+</script>
+  </head>
+  <body>
+  <h1>Design Scheme</h1>
+  <p>Javascript can be used to change the looks of websites. For example:</p>
+  <p id="sentence">The color of this sentence can be changed by pushing these buttons.</p>
+  <button type="button" onclick="document.getElementById('sentence').style.color = 'red'">Red</button>
+  <button type="button" onclick="document.getElementById('sentence').style.color = 'green'">Green</button>
+  <button type="button" onclick="document.getElementById('sentence').style.color = 'blue'">Blue</button>
+  <p>If you hover over these boxes with your mouse, the background color changes.</p>
+  <table style="width:300px;height:100px">
+  <tr>
+    <td onmouseover="bgChange(this.style.backgroundColor)" 
+        onmouseout="bgChange('transparent')"
+        style="background-color:Red">
+    </td>
+    <td onmouseover="bgChange(this.style.backgroundColor)" 
+        onmouseout="bgChange('transparent')"
+        style="background-color:Green">
+    </td>
+    <td onmouseover="bgChange(this.style.backgroundColor)" 
+        onmouseout="bgChange('transparent')"
+        style="background-color:Blue">
+    </td>
+  </tr>
+</table>
+<p id="text">By pushing these buttons this sentence can disappear and reappear.</p>
+<input type="button" value="Hide text" 
+onclick="document.getElementById('text').style.visibility='hidden'">
+
+<input type="button" value="Show text"
+onclick="document.getElementById('text').style.visibility='visible'">   
+  </body>
+</html>
