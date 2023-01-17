@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>The web site of jhakala204</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+    <h1>Silly Sentences Assignment</h1>
+    <p id="UcheStory"><input type="text" id="Sport" value="(Sport)">  <input type="text" id="City" value="(City)"><input type="text" id="Animal" value="(Animal)"> <input type="text" id="Body Part" value="(Body Part)">        <input type="text" id="Same Sport" value="(Same Sport)"> <input type="text" id="Occupation" value="(Occupation)"></p>
+    <button onclick="myFunction()">Create!</button>
+  
+    <p id="MySillyStory"></p>
+  <script>
+    function myFunction() {
+    var a = document.getElementById("Sport").value;
+    var b = document.getElementById("City").value;
+    var c = document.getElementById("Animal").value;
+    var d = document.getElementById("Body Part").value;
+    var e = document.getElementById("Same Sport").value;
+    var f = document.getElementById("Occupation").value;
+    document.getElementById("MySillyStory").innerHTML = " The sport of " + a + " is underrated. Many fantastic athletes come out of " + b + ". Everyone walks their " + c + " instead of watching the sport.  However, one day, everyone realized how stupid they are after breaking their " + d + ". Unable to cyberbully " + e + " players, they stopped being haters. They finally realized that their stupid day job as a " + f + " isn't as lucrative as being an athlete.";
+  } 
+  </script>
+  </body>
+</html>
