@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Timely Measurements</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+    <h1>Timely Measurements</h1>
+    <p>How the answer is calculated:</p>
+    <p>Hour of Current Military Time x 2 x π.</p>
+    <br>
+    <p id="demo">Answer:</p>
+    <button class="button" align="center" onclick="document.getElementById('demo').innerHTML = c">Click Here</button>
+    <br>
+    <script>
+      var r = new Date();
+      document.getElementById("demo").innerHTML = r.getHours();
+      var c = r.getHours() * Math.PI.toFixed(3) * 2;
+    </script>
+    <br>
+    <img src="/javascript/images/militarytime.png">
+  </body>
+</html>
