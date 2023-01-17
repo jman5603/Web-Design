@@ -1,0 +1,58 @@
+body {
+  background-color:navy;
+  font-family:"Verdana";
+}
+
+#link a { 
+  padding:15px; font-weight:bold; float:left; 
+}
+
+#link a:link { 
+  color:yellow; background-color:navy; 
+}
+
+#link a:visited { 
+  color:yellow; background-color:navy; 
+}
+
+#link a:hover { 
+  color:yellow; background-color:navy; 
+}
+
+#link a:active { 
+  color:yellow; background-color:navy; 
+}
+
+h1 {
+  color:yellow
+}
+
+.left {
+  position:relative;
+  right:500px;
+  top:10px;
+}
+
+p {
+  color:yellow;
+  padding:5px;
+}
+
+.size1 {
+  max-width:390px;
+}
+  
+img {
+  padding:5px;
+}
+
+.moverightablao {
+  position:relative;
+  left:50px;
+}
+
+.movediv {
+  position:relative;
+  left:440px;
+  bottom:125px;
+}
