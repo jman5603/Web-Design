@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Smile For The Canvas Assignment</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+      body {
+      background-color:orange;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Smile For The Canvas Assignment</h1>
+    <canvas id="mycanvas" width="1000" height="600">
+    </canvas>
+    <script>
+      var c = document.getElementById("mycanvas");
+      var ctx = c.getContext("2d");
+     
+     
+      //face
+       ctx.strokeRect(300, 40, 410, 500);
+  
+      //left eye
+      ctx.fillStyle = "#fff";
+      ctx.rect(360, 100, 80, 80);
+      ctx.fill();
+            
+      //right eye
+      ctx.rect(570, 100, 80, 80);
+      ctx.fill();
+      
+      //mouth
+      var asl = ctx.createLinearGradient(340, 300, 340, 410);
+      asl.addColorStop(0, "black");
+      asl.addColorStop(1, "maroon");
+      
+      
+      ctx.fillStyle = asl;
+      ctx.fillRect(340, 300, 330, 110);
+     
+     //x0 = The x-coordinate of the start point of the gradient 
+     //y0 = The y-coordinate of the start point of the gradient
+     //x1 = The x-coordinate of the end point of the gradient
+     //y1 = The y-coordinate of the end point of the gradient
+     
+      //left pupil 
+      ctx.fillStyle = "#000";
+      ctx.beginPath();
+      ctx.arc(390,130,20,0,2*Math.PI);
+      ctx.fill();
+      
+      
+      //right pupil
+      ctx.beginPath();
+      ctx.arc(600,130,20,0,2*Math.PI);
+      ctx.fill();
+      
+      //left eyebrow
+      ctx.beginPath();
+      ctx.moveTo(360, 80);
+      ctx.lineTo(450, 80);
+      ctx.lineTo(410, 50);
+      ctx.fillStyle = "#894834"
+      ctx.fill();
+      
+      //right eyebrow
+      ctx.beginPath();
+      ctx.moveTo(560, 80);
+      ctx.lineTo(650, 80);
+      ctx.lineTo(610, 50);
+      ctx.fill();
+      
+      //left tooth
+      ctx.beginPath();
+      ctx.moveTo(360, 300);
+      ctx.lineTo(380, 300);
+      ctx.lineTo(370, 330);
+      ctx.closePath();
+      ctx.fillStyle = "#ffffff";
+      ctx.fill();
+      
+      //right tooth
+      ctx.beginPath();
+      ctx.moveTo(630, 300);
+      ctx.lineTo(650, 300);
+      ctx.lineTo(640, 330);
+      ctx.closePath();
+      ctx.fillStyle = "#ffffff";
+      ctx.fill();
+     
+    </script>
+  </body>
+</html>
