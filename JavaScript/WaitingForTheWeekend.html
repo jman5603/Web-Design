@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Waiting For The Weekend Assignment</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+  <h1>Waiting For The Weekend</h1>
+  <p id="current"></p>
+  <p id="ifweekend"></p>
+  <p id="daysleft"></p>
+  <script>
+  var day = new Date();
+  var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  
+  function weekendCountdown(){  
+  document.getElementById("current").innerHTML = "Today is " + (week[day.getDay()]) + ".";
+  
+  if ((week[day.getDay()]) != (("Saturday") || ("Sunday")))
+    document.getElementById("ifweekend").innerHTML = "Today is a school day.";
+  else
+    document.getElementById("ifweekend").innerHTML = "Today is not a school day.";
+    
+  if (0 < (day.getDay()) < 7)
+    document.getElementById("daysleft").innerHTML = "There are " + (6 - (day.getDay())) + " days left until the weekend" + ".";
+  else if ((day.getDay()) == 0)
+    document.getElementById("daysleft").innerHTML = "There are " + (47 - (day.getHours())) + " hours left in the weekend" + ".";
+  else if ((day.getDay()) == 7)
+    document.getElementById("daysleft").innerHTML = "There are " + (23 - (day.getHours())) + " hours left in the weekend" + ".";
+}
+
+weekendCountdown();
+  </script>
+  </body>
+</html>
