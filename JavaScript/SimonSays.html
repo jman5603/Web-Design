@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>The web site of jhakala204</title>
+  <style>
+  #red {
+   width:200px;
+   height:200px;
+   background:red;
+   float:left;
+   margin:15px;
+  }
+  #green {
+    width:200px;
+    height:200px;
+    background:#3AFF33;
+    float:left;
+    margin:15px;
+  }         
+  #purple {
+    width:200px;
+    height:200px;
+    background:#C833FF;
+    float:left;
+    margin:15px;
+  }
+  #blue {
+    width:200px;
+    height:200px;
+    background: blue;
+    float:left;
+    margin:15px;
+  }
+  .circle {
+    border-radius:50%;
+    border:3px solid #000;
+  }
+  .circle:active {
+    filter: brightness(150%);
+  }
+  #square {
+    width:490px;
+    height:490px;
+    background:orange;
+    overflow:hidden; 
+    border:3px solid #000;
+  }
+  </style>
+  </head>
+  <body>
+  <h1>Simon Says</h1>
+
+  <div id="square">
+  <div id="red" class="circle"></div>
+  <div id="green" class="circle"></div>
+  <p style="clear:both;"></p>
+  <div id="purple" class="circle"></div>
+  <div id="blue" class="circle"></div>
+  </div><br>
+  <p style="text-align:left" id="idk"></p><br>
+  <button onclick="playgamea()" id="btn">Play</button><br>
+  <script>
+    var arr = ["red","green","purple","blue"],
+    seq = [], //Used for memory/display
+    seq2 = [],  //Used for sequence checking
+    text = document.getElementById("idk"),
+    blah = document.getElementsByClassName("circle");
+      
+    function playgamea() {
+      var rando = Math.floor(Math.random() * 4);
+      
+      document.getElementById("btn").style.visibility = "hidden";
+      
+      for(i = 0; i < blah.length; i++){
+        blah[i].addEventListener("click", checkkk);
+      }
+      
+      seq.push(arr[rando]);
+      seq2 = seq.slice();
+      
+      text.innerHTML = seq.toString();
+      
+      setTimeout(function(){
+        text.innerHTML = "";
+      }, 1000);
+    }
+    
+    function checkkk() {
+      var something = this.id;
+      if (something == seq2[0]) {
+        document.getElementById('square').style.background = "#00FF00";
+        seq2.splice(0, 1);
+        if (seq2.length == 0) {
+          playgamea();
+        };
+        setTimeout(function() {
+          document.getElementById('square').style.background = "orange";
+        }, 750);
+      } else {
+          document.getElementById('square').style.background = "#FF0000";
+          done();
+        }
+    }
+    
+    function done() {
+      for(i = 0; i < blah.length; i++) {
+        blah[i].removeEventListener("click", checkkk);
+      }
+      setTimeout(function() {
+        alert('Game over!\n\nYour longest sequence: ' + (seq.length - 1));
+        document.getElementById('square').style.background = "orange";
+        document.getElementById("btn").style.visibility = "visible";
+        seq = [];
+        seq2 = [];
+      }, 750);
+    }
+  </script>
+
+  </body>
+</html>
