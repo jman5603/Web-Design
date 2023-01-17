@@ -1,0 +1,59 @@
+body {
+  background-color:navy;
+  font-family:"Verdana";
+}
+
+#link a { 
+  padding:15px; font-weight:bold; float:left; 
+}
+
+#link a:link { 
+  color:yellow; background-color:navy; 
+}
+
+#link a:visited { 
+  color:yellow; background-color:navy; 
+}
+
+#link a:hover { 
+  color:yellow; background-color:navy; 
+}
+
+#link a:active { 
+  color:yellow; background-color:navy; 
+}
+
+.left {
+  position:relative;
+  right:450px;
+  top:10px;
+}
+
+h1, h3 {
+  color:yellow;
+}
+
+p {
+  color:yellow;
+}
+
+#link2 a:link { 
+  color:yellow; background-color:navy; 
+}
+
+#link2 a:visited { 
+  color:yellow; background-color:navy; 
+}
+
+#link2 a:hover { 
+  color:yellow; background-color:navy; 
+}
+
+#link2 a:active { 
+  color:yellow; background-color:navy; 
+}
+
+img {
+  max-width:100%;
+  height:auto;
+}
