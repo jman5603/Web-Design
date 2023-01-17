@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Blackjack Assignment</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+    <h1>Blackjack</h1>
+    <noscript>
+    </noscript>
+    <button id="blkJckBtn" onclick="blackJack()">Start</button>
+    <p id="blkJck"></p>
+    <script type="text/javascript">
+      function blackJack() {
+        
+        console.clear();  
+        document.getElementById('blkJck').innerHTML = ""; 
+        document.getElementById('blkJckBtn').innerHTML = "Try Again";
+        
+        var deck = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+        var card1 = Math.floor(Math.random() * 12), card2 = Math.floor(Math.random() * 12);
+        
+        if (deck[card1] > 10) {
+          card1 = 9;
+        };
+        if (deck[card2] > 10) {
+          card2 = 9;
+        };
+        
+                console.log("First card is " + deck[card1]);
+        console.log("Second card is " + deck[card2]);
+        
+        if (card1 == 0) {
+          if (deck[card2] + 11 <= 21) { card1 = 10; };
+        };
+        if (card2 == 0) {
+          if (deck[card1] + 11 <= 21) { card2 = 10; };
+        };
+        
+        if (deck[card1] + deck[card2] > 21) {
+          
+          document.getElementById('blkJck').innerHTML += "Dealer is busted. " + "(" + (deck[card1] + deck[card2]) + ")"; 
+        } else if ((card1 == 10 || card2 == 10) && (card1 == 9 || card2 == 9)) {
+          
+            document.getElementById('blkJck').innerHTML += "Dealer has Blackjack! " + "<b>(Ace + 10)</b>";  
+          } else if (deck[card1] + deck[card2] < 17) {
+
+              var total = deck[card1] + deck[card2], cardTemp = 0;
+              while (total < 17) {
+                document.getElementById('blkJck').innerHTML += "Dealer has <b>" + total + "</b>. Hitting...<br>";
+                var cardTemp = Math.floor(Math.random() * 12);
+                if (deck[cardTemp] > 10) {
+                  cardTemp = 9;
+                };
+                if (cardTemp == 0) {
+                  if (total + 11 <= 21) {
+                    cardTemp = 10;
+                  };
+                };
+                console.log("Extra card: " + deck[cardTemp]);
+                total += deck[cardTemp];
+                if (total > 21) {
+                  
+                  document.getElementById('blkJck').innerHTML += "Dealer is busted. " + "<b>(" + total + ")</b><br>";
+                } else if ((total >= 17) && (total <= 21)) {
+                  
+                    document.getElementById('blkJck').innerHTML += "Dealer is staying. " + "<b>(" + total + ")</b><br>";
+                  };
+              };
+              
+            } else {
+              
+                //Stay if dealer initially gets between 17 and 21
+                document.getElementById('blkJck').innerHTML += "Dealer has <b>" + (deck[card1] + deck[card2]) + "</b> and is staying. ";
+              };
+      }
+    </script>
+  </body>
+</html>
