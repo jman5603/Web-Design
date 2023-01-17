@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Dinner Plans Assignment</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body onload="thing()">
+  <font color = "red">
+   <center> <h1>Dinner Plans</h1></center>
+   <style>
+   table, th, td {
+     border:1px solid red;
+     border-collapse:collapse;
+     padding: 3px;
+     text-align:center;
+   }
+  body {
+   background-color:black; 
+  }
+  a {
+   color:red; 
+  }
+   </style>
+   <font color="Red">
+   <table>
+   <thead>
+   <tr>
+   <td>Name</td>
+   <td>Slices</td>
+   <td>Toppings</td>
+   </tr>
+   </thead>
+   <tr>
+   <td>Jane</td>
+   <td>2</td>
+   <td>Mushroom, onion, peppers, olives</td>
+   </tr>
+   <tr>
+   <td>Lisa</td>
+   <td>3</td>
+   <td>Pepperoni, ham, pineapple</td>
+   </tr>
+   <tr>
+   <td>Taylor</td>
+   <td>3</td>
+   <td>Extra cheese, pepperoni, sausage, bacon</td>
+   </tr>
+   <tr>
+   <td>Chris</td>
+   <td>2</td>
+   <td>Mushroom, sausage, bacon, ham, onion, peppers</td>
+   </tr>
+   <tr>
+   <td>Alyssa</td>
+   <td>1</td>
+   <td>Pepperoni, bacon</td>
+   </tr>
+   <tr>
+   <td>Will</td>
+   <td>2</td>
+   <td>Extra cheese, sausage, bacon, onion, peppers, olives</td>
+   </tr>
+   <tr>
+   <td>Jessica</td>
+   <td>2</td>
+   <td>Pepperoni, bacon, ham, pineapple, onion, peppers</td>
+   </tr>
+   </table>
+   </font>
+   <p id="output"></p>
+   <script>
+   function Dood(slices, toppings) {
+    this.slices = slices;
+    this.toppings = toppings;
+   }
+   
+   var Jane = new Dood(2, ["mushroom","onion","peppers","olives"]),
+   Lisa = new Dood(3, ["pepperoni","ham","pineapple"]),
+   Taylor = new Dood(3, ["extra cheese","pepperoni","sausage","bacon"]),
+   Chris = new Dood(2, ["mushroom","sausage","bacon","ham","onion","peppers"]),
+   Alyssa = new Dood(1, ["pepperoni","bacon"]),
+   Will = new Dood(2, ["extra cheese","sausage","bacon","onion","peppers","olives"]),
+   Jessica = new Dood(2, ["pepperoni","bacon","ham","pinaapple","onion","peppers"]);
+   //Secret Person
+   Spongebob = new Dood(1, ["The Krusty Krab"]);
+   function arrayCount(array, what) {
+    var count = 0;
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] === what) {
+          count++;
+        }
+    }
+    return count;
+   }
+   
+   function thing() {
+    var question = prompt("Who is Coming to Dinner?", "Alyssa, Chris, Jane");
+    if (question !== null && question != "") { 
+      var people = question.split(", "),
+      slices = 0, tempArray = [];
+   
+   for (i = 0; i < people.length; i++) {
+     switch (people[i]) {
+       case "Jane":
+         slices += Jane.slices;
+         tempArray = tempArray.concat(Jane.toppings);
+         break;
+       case "Lisa":
+         slices += Lisa.slices;
+         tempArray = tempArray.concat(Lisa.toppings);
+         break;
+       case "Taylor":
+         slices += Taylor.slices;
+         tempArray = tempArray.concat(Taylor.toppings);
+         break;
+       case "Chris":
+         slices += Chris.slices;
+         tempArray = tempArray.concat(Chris.toppings);
+         break;
+       case "Alyssa":
+         slices += Alyssa.slices;
+         tempArray = tempArray.concat(Alyssa.toppings);
+         break;
+       case "Will":
+         slices += Will.slices;
+         tempArray = tempArray.concat(Will.toppings);
+         break;
+       case "Jessica":
+         slices += Jessica.slices;
+         tempArray = tempArray.concat(Jessica.toppings);
+         break;
+       case "Spongebob":
+         slices += Spongebob.slices;
+         tempArray = tempArray.concat(Spongebob.toppings);
+         break;
+       default:
+         alert(people[i] + " can't come over!\n\nPlease write the names like this:\nName1, Name2, Name3...\n\nThe Names are cAsE-SeNsItIvE!");
+         delete people[i];
+     };
+   };
+      for (a = 0; a < people.length; a++) {
+        if (people[a] === undefined) {
+          people.splice(a, 1);
+          a--;
+        };
+      };
+      if (people.length == 0) { return; };
+      
+      var sortArray = tempArray.slice().sort(), toppings = [];
+      if (people.length > 1) {
+        for (x = 0; x < sortArray.length; x++) {
+          if (arrayCount(sortArray, sortArray[x]) == people.length) {
+            toppings.push(sortArray[x]);
+            sortArray.splice(x, 1);
+          };
+        };
+      } else {
+          toppings = tempArray;
+      };
+      
+      if (toppings.length == 0) {
+        toppings[0] = "plain";
+      };
+      document.getElementById("output").innerHTML = "You will need " + slices + " slices of " + (toppings.join(", ")) + " pizza.";
+    };
+   }
+   </script>
+   </font>
+   <hr size="4" color="black">
+  </body>
+</html>
