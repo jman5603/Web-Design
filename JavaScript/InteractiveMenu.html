@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Interactive Menu Assignment</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+     button {
+        border: none;
+        font-size: 15px;
+        background-repeat: no-repeat;
+        background-size:100px;
+        color: black;
+        vertical-align: left;
+        margin:none;
+        float:left;
+        position:relative;
+        padding-top:30px;
+        padding-right:30px;
+      }
+      button:hover {
+        color:blue;
+        font-size: 15px;
+      }
+      #menu{
+        font-size: 20px;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+      }
+    </style>
+  </head>
+<body>
+    <h1>Interactive Menu Assignment</h1>
+    <h2>Fortnite Strategies</h2>
+    <div id="menu" class="container">
+      <button id="bridges">Covered Bridges</button>
+      <button id="bush">Hide in a Bush</button>
+      <button id="staircase">Build Spiral Staircases</button>
+      <button id="guns">Find Good Weapons</button>
+    </div>    
+    <h3>Description:</h3>
+    <p id="info">Click on a button for a Fortnite tip.</p>
+    <script>
+      var text = document.getElementById("info"),
+      sec = document.getElementById("menu").children, tab = 0,
+      btn = document.getElementsByTagName("button");
+      
+      for (var i = 0; i < sec.length; i++) {
+        sec[i].addEventListener("click", funcCheck);
+      }
+      
+      function funcCheck() {
+        if (text.innerHTML != "Click on character for a summary about them." || "") {
+          text.innerHTML = "";
+        }
+        var clicked = this.id;
+        switch (clicked) {
+          case "bridges":
+            text.innerHTML = "<h2>Covered Bridges</h2><br><img src='/javascript/images/coveredbridges.jpg'><br> An easy way to get killed in Fortnite is to get sniped while trying to cross over bodies of water such as rivers. One way to prevent this from happening is to build covered bridges. Simply build one ramp up over the water, and build walls and a roof over your bridge as you cross the treacherous waters. If you have time, you can add a tower on top of your bridge to provide covering fire for your teammates as they cross the newly constructed bridge. Don't forget to destroy the bridge after you have finished using it, for enemies could find it and use it to cross the water to eliminate you and your squad mates.";
+            break;
+          case "bush":
+            text.innerHTML = "<h2>Hide in a Bush</h2><br><img src='/javascript/images/bushcamp.jpg'><br> If you are spotted by an adversary as you are crossing the Fortnite island, you will more than likely be killed by that enemy. This is why hiding is such a vital part of winning matches of Fortnite. One way that many pro players hide is by sitting inside of a bush. The legendary bush item is the best option, but you can find a natural bush in the map that can work just as well. It works the best if you hold a consumable item, such as a bandage or a mini shield, and look down towards the ground. This way, your character's head will be very hard to spot. Once the storm requires you to move, just stay along the edge and move to a new bush inside of the circle.";
+            break;
+          case "staircase":
+            text.innerHTML = "<h2>Build Spiral Staircases</h2> <br><img src='/javascript/images/spiralstaircases.jpg'><br> When faced by a mountain or hill that you can not run up, you must build a staircase up. The quickest way to do this is to build a spiral staircase. Edit your stair into a corner stair, and build a staircase up the hill. This is the most efficient way to quickly move up a hill to escape the storm. For added protection, you can build walls around the staircase to protect from enemy fire. Once at the top of the hill, destroy the staircase so enemies can't follow you.";
+            break;
+          case "guns":
+            text.innerHTML = "<h2>Find Good Weapons</h2><br><img src='/javascript/images/pistol.jpg'><br> An easy way to get yourself into the endgame in a match is by looting up and finding good weapons. For example, the white pistol (shown above) is a great close range weapon. ";
+            break;
+        }
+      }
+      
+      function key(event) {
+        switch (event.which) {
+          case 38:
+            if (tab >= 7) { tab = 0 }
+            btn[tab].focus();
+            tab++
+            break;
+          case 39:
+            if (tab >= 7) { tab = 0 }
+            btn[tab].focus();
+            tab++
+            break;
+          case 40:
+            if (tab < 0) { tab = 6 }
+            btn[tab].focus();
+            tab--
+            break;
+          case 37:
+            if (tab < 0) { tab = 6 }
+            btn[tab].focus();
+            tab--
+            break;
+        }
+      }
+      document.addEventListener("keydown", key);
+    </script>
+
+  </body>
+</html>
