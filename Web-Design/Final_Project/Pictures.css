@@ -1,0 +1,44 @@
+body {
+  background-color:navy;
+  font-family:"Verdana";
+}
+
+#link a { 
+  padding:15px; font-weight:bold; float:left; 
+}
+
+#link a:link { 
+  color:yellow; background-color:navy; 
+}
+
+#link a:visited { 
+  color:yellow; background-color:navy; 
+}
+
+#link a:hover { 
+  color:yellow; background-color:navy; 
+}
+
+#link a:active { 
+  color:yellow; background-color:navy; 
+}
+
+.left {
+  position:relative;
+  right:480px;
+  top:10px;
+}
+
+h1, p {
+  color:yellow;
+}
+
+h3 {
+  padding:5px;
+  color:yellow;
+}
+
+img {
+  max-width:35%;
+  height:auto;
+}
